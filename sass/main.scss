@@ -1,0 +1,12 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+/* Custom Properties a partir de variables Sass */
+:root { --bg:#{$bg}; --fg:#{$fg}; }
+@media (prefers-color-scheme: dark){ :root { --bg:#0b1020; --fg:#e6edf3; } }
+
+/* Ejemplo de uso del mixin de breakpoint */
+.hero { padding: $space-3; }
+@include bp(64rem){
+  .hero { padding: calc($space-3 * 2); }
+}

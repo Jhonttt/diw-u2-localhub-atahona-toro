@@ -1,0 +1,35 @@
+/* LocalHub – 12h main.css (conciso) */
+/* Variables base y tema (Mejora 1 posible) */
+:root {
+  --bg: #ffffff; --fg: #111111;
+  --brand: #1e293b; --accent: #0ea5e9;
+  --font-base: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  --step-0: 1rem; --step-1: clamp(1.125rem, 1.5vw, 1.25rem); --step-2: clamp(1.5rem, 3vw, 2rem);
+  --space-1: .5rem; --space-2: 1rem; --space-3: 1.5rem;
+}
+@media (prefers-color-scheme: dark){ :root { --bg:#0b1020; --fg:#e6edf3; } }
+
+/* Base + accesibilidad mínima */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font-base); background: var(--bg); color: var(--fg); }
+img { max-width: 100%; height: auto; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.skip-link { position:absolute; left:-9999px; } .skip-link:focus{ left:1rem; top:1rem; background:#fff; padding:.5rem 1rem; }
+
+/* Grid macro */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 70ch) 1fr;
+  grid-template-areas: "header header header" ". main ." "footer footer footer";
+  gap: var(--space-3);
+}
+.site-header{ grid-area: header; } .site-footer{ grid-area: footer; padding: var(--space-2) 0; border-top:1px solid #ddd; }
+
+/* Grid auto para cards */
+.grid-auto{ display:grid; gap:var(--space-2); grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+
+/* Flex micro */
+.site-nav{ display:flex; align-items:center; justify-content:space-between; gap:var(--space-2); padding: var(--space-2) 0; }
+.nav-list{ display:flex; gap:var(--space-2); list-style:none; margin:0; padding:0; }
+.card{ display:flex; flex-direction:column; gap:.5rem; padding: var(--space-2); border:1px solid #e5e7eb; border-radius:.75rem; }
+.btn{ display:inline-flex; align-items:center; justify-content:center; padding:.6rem 1rem; border-radius:.5rem; text-decoration:none; background:var(--accent); color:#fff; }

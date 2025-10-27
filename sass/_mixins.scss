@@ -1,0 +1,2 @@
+// _mixins.scss — micro‑Sass (12 h)
+@mixin bp($w) { @media (min-width: $w) { @content; } }

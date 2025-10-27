@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocalHub – Landing</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" role="banner">
+    <nav class="site-nav" aria-label="Principal">
+      <a class="brand" href="#">LocalHub</a>
+      <ul class="nav-list">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido" class="layout" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Conecta con tu barrio</h1>
+      <p>Servicios locales verificados por la comunidad.</p>
+      <a class="btn" href="#contacto">Empezar</a>
+    </section>
+
+    <section id="servicios" class="services grid-auto" aria-labelledby="services-title">
+      <h2 id="services-title">Servicios</h2>
+      <article class="card"><h3>Envíos rápidos</h3><p>Entrega en el día.</p></article>
+      <article class="card"><h3>Atención cercana</h3><p>Soporte humano.</p></article>
+      <article class="card"><h3>Comercio responsable</h3><p>Proveedores verificados.</p></article>
+    </section>
+
+    <section id="contacto" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contacto</h2>
+      <form action="#" method="post">
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+        <button class="btn" type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <small>© LocalHub</small>
+  </footer>
+</body>
+</html>
