@@ -114,3 +114,22 @@ img {
   background: var(--accent);
   color: #fff;
 }
+
+
+#contacto form {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+
+.field input:is([id="name"], [id="email"]) {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5em;
+  margin-bottom: var(--space-1);
+}
+
+.field input:is([id="name"], [id="email"]),
+.btn[type="submit"] {
+  border: 1px solid #ddd;
+}
