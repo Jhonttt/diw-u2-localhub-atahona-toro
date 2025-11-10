@@ -13,7 +13,10 @@
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
+  /* Creación de una nueva variable de espacio */
+  --space-4: calc(33px + 21px);
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0b1020;
@@ -25,24 +28,29 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: var(--font-base);
   background: var(--bg);
   color: var(--fg);
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
+
 :focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
 }
+
 .skip-link {
   position: absolute;
   left: -9999px;
 }
+
 .skip-link:focus {
   left: 1rem;
   top: 1rem;
@@ -55,21 +63,25 @@ img {
   display: grid;
   grid-template-columns: 1fr minmax(0, 70ch) 1fr;
   grid-template-areas:
-  ". header ."
-  ". main ."
-  ". footer .";
-  gap: var(--space-3);
+    ". header ."
+    ". main ."
+    ". footer .";
+  gap: var(--space-1);
 }
+
 .site-header {
-  background-color:var(--bg) ;
+  background-color: var(--bg);
   grid-area: header;
+  /* Al bajar en la página la barra de navegación se queda fija en la parte superior */
   position: sticky;
   top: 0;
   z-index: 10;
 }
+
 .site-main {
   grid-area: main;
 }
+
 .site-footer {
   grid-area: footer;
   padding: var(--space-2) 0;
@@ -91,6 +103,7 @@ img {
   gap: var(--space-2);
   padding: var(--space-2) 0;
   border-bottom: 1px solid #ddd;
+  margin-bottom: 2px;
 }
 
 .nav-list {
@@ -102,19 +115,18 @@ img {
 }
 
 .site-nav .brand {
-  color: var(--fg);  
+  color: var(--fg);
   text-decoration: none;
   font-weight: bold;
 }
 
-.site-nav a{
+.site-nav a {
   text-decoration: none;
   color: var(--accent);
 }
 
-
 .card {
-  background: linear-gradient(to bottom ,#fafafa,var(--bg));
+  background: linear-gradient(to bottom, #fafafa, var(--bg));
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -133,14 +145,13 @@ img {
   text-decoration: none;
   background: var(--accent);
   color: #fff;
+  margin-bottom: calc((var(--space-3) + 21.44px + 16px) - var(--space-4));
 }
-
 
 #contacto form {
   display: flex;
   flex-flow: column wrap;
 }
-
 
 .field input:is([id="name"], [id="email"]) {
   width: 100%;
@@ -152,4 +163,40 @@ img {
 .field input:is([id="name"], [id="email"]),
 .btn[type="submit"] {
   border: 1px solid #ddd;
+}
+
+/* Utilizamos el @media para cambiar los margenes en determinados píxeles */
+@media screen and (max-width: 639px) {
+  h1 {
+    margin-top: 0;
+  }
+
+  .btn {
+    margin-bottom:  0;
+  }
+
+  #services-title{
+    margin-top: 6px;
+  }
+}
+
+/* Reducir el tamaño de letra de los títulos */
+#services-title,
+#contact-title {
+  font-size: 1em;
+}
+
+#contact-title {
+  font-weight: 800;
+}
+
+h1{
+  font-size: 1.5em;
+}
+
+/* Creamos el id separator para que se pueda visualizar el titulo de servicios,
+   esto debido a que utilizamos el position:sticky, y al interactuar con el
+   titulo la vision era nula y confusa.  */
+#separator{
+ height: var(--space-4);
 }
