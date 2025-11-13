@@ -10,17 +10,20 @@
   --step-0: 1rem;
   --step-1: clamp(1.125rem, 1.5vw, 1.25rem);
   --step-2: clamp(1.5rem, 3vw, 2rem);
-  --space-1: 0.5rem;
+  --space-1: clamp(.25rem, .5rem, .75rem);
   --space-2: 1rem;
   --space-3: 1.5rem;
   /* Creación de una nueva variable de espacio */
   --space-4: calc(33px + 21px);
+  /* Creación de 2 rangos con clamp */
+  --font-size-1: clamp(0.9em, 1.65vw, 1.1em);
+  --font-size-2: clamp(1.3em, 2vw, 1.8em);
   /*  Creacion de nuevas variables para editar con el modo oscuro*/
   --color-1:#ddd;
-  --gradient-1:linear-gradient(to bottom, #fafafa, var(--bg));
-  --gradient-2:var(--bg);
-  --gradient-3:var(--fg);
-}
+  --gradient-1: linear-gradient(to bottom, #fafafa, var(--bg));
+  --gradient-2: var(--bg);
+  --gradient-3: var(--fg);
+  }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -73,6 +76,7 @@ img {
 .layout {
   display: grid;
   grid-template-columns: 1fr minmax(0, 70ch) 1fr;
+  /* Cambiamos la estructura para que se muestre solo en el medio poniendo vacíos a los lados */
   grid-template-areas:
     ". header ."
     ". main ."
@@ -89,6 +93,7 @@ img {
   z-index: 10;
 }
 
+/*  */
 .site-main {
   grid-area: main;
 }
@@ -198,7 +203,7 @@ img {
 /* Reducir el tamaño de letra de los títulos */
 #services-title,
 #contact-title {
-  font-size: 1em;
+  font-size: var(--font-size-1);
 }
 
 #contact-title {
@@ -206,7 +211,7 @@ img {
 }
 
 h1{
-  font-size: 1.5em;
+  font-size: var(--font-size-2);
 }
 
 /* Creamos el id separator para que se pueda visualizar el titulo de servicios,
