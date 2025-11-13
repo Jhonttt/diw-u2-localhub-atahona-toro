@@ -15,12 +15,23 @@
   --space-3: 1.5rem;
   /* Creación de una nueva variable de espacio */
   --space-4: calc(33px + 21px);
+  /*  Creacion de nuevas variables para editar con el modo oscuro*/
+  --color-1:#ddd;
+  --gradient-1:linear-gradient(to bottom, #fafafa, var(--bg));
+  --gradient-2:var(--bg);
+  --gradient-3:var(--fg);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0b1020;
     --fg: #e6edf3;
+    --color-1:#2f3959;
+    --gradient-1:linear-gradient(to bottom, #1b2030, var(--bg));
+    --accent:#0d6791;
+    --gradient-2:linear-gradient(to left, #1b2138, var(--bg));
+    --gradient-3:linear-gradient(to right,var(--color-1) , rgba(147, 147, 147, 0.663))1;
+
   }
 }
 
@@ -42,7 +53,7 @@ img {
 }
 
 :focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--fg);
   outline-offset: 2px;
 }
 
@@ -85,7 +96,7 @@ img {
 .site-footer {
   grid-area: footer;
   padding: var(--space-2) 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--color-1);
 }
 
 /* Grid auto para cards */
@@ -102,7 +113,7 @@ img {
   justify-content: space-between;
   gap: var(--space-2);
   padding: var(--space-2) 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-1);
   margin-bottom: 2px;
 }
 
@@ -126,13 +137,13 @@ img {
 }
 
 .card {
-  background: linear-gradient(to bottom, #fafafa, var(--bg));
+  background: var(--gradient-1);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: .5rem;
   padding: var(--space-2);
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-1);
   border-radius: .75rem;
 }
 
@@ -155,14 +166,18 @@ img {
 
 .field input:is([id="name"], [id="email"]) {
   width: 100%;
-  padding: 0.6rem 1rem;
-  border-radius: 0.5em;
+  padding: 0.6rem 0.65rem;
+  border-radius: var(--space-1);
+  margin-top: 0.4em;
   margin-bottom: var(--space-1);
+  background: var(--gradient-2);
+  color: var(--fg);
 }
 
 .field input:is([id="name"], [id="email"]),
 .btn[type="submit"] {
-  border: 1px solid #ddd;
+  border: 1px solid;
+  border-image: var(--gradient-3);
 }
 
 /* Utilizamos el @media para cambiar los margenes en determinados píxeles */
