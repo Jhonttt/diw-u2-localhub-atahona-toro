@@ -32,7 +32,9 @@
     --color-1:#2f3959;
     --gradient-1:linear-gradient(to bottom, #1b2030, var(--bg));
     --accent:#0d6791;
+    /* Le damos un gradiente al input*/
     --gradient-2:linear-gradient(to left, #1b2138, var(--bg));
+    /* Damos un gradiente al borde del boton */
     --gradient-3:linear-gradient(to right,var(--color-1) , rgba(147, 147, 147, 0.663))1;
 
   }
@@ -55,6 +57,7 @@ img {
   height: auto;
 }
 
+/* Cambiamos el color a una variable local para contrastar en el tema oscuro */
 :focus-visible {
   outline: 2px solid var(--fg);
   outline-offset: 2px;
@@ -90,6 +93,7 @@ img {
   /* Al bajar en la página la barra de navegación se queda fija en la parte superior */
   position: sticky;
   top: 0;
+  /* Utilizamos el z-index para mostrar la barra de navegación fija */
   z-index: 10;
 }
 
@@ -130,12 +134,14 @@ img {
   padding: 0;
 }
 
+/* Cambiar el estilo de la palabra LocalHub */
 .site-nav .brand {
   color: var(--fg);
   text-decoration: none;
   font-weight: bold;
 }
 
+/* Cambiar el estilo de los enlaces Servicios y Contactos */
 .site-nav a {
   text-decoration: none;
   color: var(--accent);
@@ -161,6 +167,7 @@ img {
   text-decoration: none;
   background: var(--accent);
   color: #fff;
+  /* Calcular el margen del boton */
   margin-bottom: calc((var(--space-3) + 21.44px + 16px) - var(--space-4));
 }
 
@@ -170,6 +177,7 @@ img {
 }
 
 .field input:is([id="name"], [id="email"]) {
+  /* Modifición de determinados atributos para mejorar el diseño */
   width: 100%;
   padding: 0.6rem 0.65rem;
   border-radius: var(--space-1);
@@ -179,14 +187,17 @@ img {
   color: var(--fg);
 }
 
-.field input:is([id="name"], [id="email"]),
-.btn[type="submit"] {
+.field input:is([id="name"], [id="email"]) {
   border: 1px solid;
+  /* Uso del border-image para poner gradiente al borde del botón */
   border-image: var(--gradient-3);
+}
+.btn[type="submit"]{
+  border:1px solid var(--bg) ;
 }
 
 /* Utilizamos el @media para cambiar los margenes en determinados píxeles */
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 607px) {
   h1 {
     margin-top: 0;
   }

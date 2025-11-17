@@ -37,3 +37,19 @@ Consulta `CHECKLIST.md` y márcala en la entrega final.
 
 ## Uso de IA
 Declara aquí cualquier apoyo de IA y la revisión humana aplicada.
+
+## Decisiones Tomadas
+**Imágenes:** En este proyecto no hemos utilizado imágenes, por lo que no fue necesario declaralas en el html. 
+Aún así, si en un futuro se incorporan, la forma correcta de incluirlas sería: `<img src='imagenes/logotipo.png' alt='Logotipo de la empresa'>`.
+
+**Grid:** en nuestro caso no hemos utilizado únicamente un solo método de grid, si no, que hemos combinado dos métodos diferentes, según las necesidades del diseño:
+
+- **áreas:** para la organización general del layout hemos optado por usar Grid con áreas, ya que nos permite definir de manera clara la estructura principal de la página, y centrar el contenido dejando columnas vacias a los costados, ofreciendo flexibilidad.
+
+- **auto-fit/minmax:** en este caso hemos elegído utilizar estos métodos para la selección de tarjetas porque ofrece uun comportamiento completamente responsive sin necesidad de múltiples breakpoints, esta combinación permite que las tarjetas se ajusten automáticamente al ancho disponible de la página.
+
+**breakpoint:** decidimos utilizar un breakpoint específico a 607px, porque a esa anchura observamos un cambio clave en el comportamiento del diseño, ya que el grid de las tarjetas ya fuerza naturalmente la disposición en una sola columna, pero elementos como los márgenes, botones y títulos necesitaban un ajuste adicional.
+
+**sticky:** en la barra de navegación utilizamos `position:sticky` para mantenerla siempre visible mientras el usuario hace scroll. Mejorando la accesibilidad y experiencia de uso, ya que permite acceder rápidamente al menú sin necesidad de volver a la parte superior de la página. Además solo se fija cuando llega al borde superior, evitando ocupar espacio innecesario antes de tiempo.
+
+**separator:** debido a que el header es sticky, al hacer scroll el título de "Servicios" quedaba oculto bajo la barra de navegación, para corregir este incovenietne, añadimos un separador con una etiqueta `<div id='separator'></div>`, introduciendo un pequeño margen visual que evita que el título quede cubierto, cabe destacar que dicho elemento es invisible. 
