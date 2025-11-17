@@ -23,7 +23,8 @@
   --gradient-1: linear-gradient(to bottom, #fafafa, var(--bg));
   --gradient-2: var(--bg);
   --gradient-3: var(--fg);
-  }
+  --hover-btn: #09628b;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -31,12 +32,17 @@
     --fg: #e6edf3;
     --color-1:#2f3959;
     --gradient-1:linear-gradient(to bottom, #1b2030, var(--bg));
-    --accent:#0d6791;
+    --accent:#09628b;
     /* Le damos un gradiente al input*/
     --gradient-2:linear-gradient(to left, #1b2138, var(--bg));
     /* Damos un gradiente al borde del boton */
     --gradient-3:linear-gradient(to right,var(--color-1) , rgba(147, 147, 147, 0.663))1;
+    --hover-btn: #0ea5e9;
 
+  }
+
+  form .field input:is([id="name"], [id="email"]) {
+    border-radius: 0;
   }
 }
 
@@ -171,6 +177,10 @@ img {
   margin-bottom: calc((var(--space-3) + 21.44px + 16px) - var(--space-4));
 }
 
+.btn:hover {
+  background-color: var(--hover-btn);
+}
+
 #contacto form {
   display: flex;
   flex-flow: column wrap;
@@ -192,6 +202,7 @@ img {
   /* Uso del border-image para poner gradiente al borde del botón */
   border-image: var(--gradient-3);
 }
+
 .btn[type="submit"]{
   border:1px solid var(--bg) ;
 }
@@ -230,4 +241,8 @@ h1{
    titulo la vision era nula y confusa.  */
 #separator{
  height: var(--space-4);
+}
+
+html {
+  scroll-behavior: smooth;
 }

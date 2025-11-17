@@ -61,3 +61,6 @@ Aún así, si en un futuro se incorporan, la forma correcta de incluirlas sería
 **separator:** debido a que el header es sticky, al hacer scroll el título de "Servicios" quedaba oculto bajo la barra de navegación, para corregir este incovenietne, añadimos un separador con una etiqueta `<div id='separator'></div>`, introduciendo un pequeño margen visual que evita que el título quede cubierto, cabe destacar que dicho elemento es invisible. 
 
 **hover:** uso de la pseudoclase `.btn:hover` para cambiar el color de los botones al situar el cursor encima de ellos.
+
+## Evidencias
+**assets/screenshots:** creación de las carpetas para guardar evidencias de la página web tanto para móvil como para escritorio con píxeles de 360px en caso de celular y 1024px para ordenador.
