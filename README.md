@@ -36,11 +36,17 @@
 Consulta `CHECKLIST.md` y márcala en la entrega final.
 
 ## Uso de IA
-Declara aquí cualquier apoyo de IA y la revisión humana aplicada.
+ Uso de herramientas como ChatGPT para dos funcionalidades en específico:
+
+ - Implementación de un color de gradiente al borde del input utilizando `border-image`.
+ - Funcionamiento de `grid-template-areas` especificamente para centrar contenidos dejando las columnas vacías a los lados.
+ - Funcionamiento de la propiedad `scroll-behavior:smooth` aplicada al elemento raíz, para controlar la animación del desplazamiento cuando se navega por los enlaces de 'Servicios' y 'Contacto'.
 
 ## Decisiones Tomadas
-**Imágenes:** En este proyecto no hemos utilizado imágenes, por lo que no fue necesario declaralas en el html. 
-Aún así, si en un futuro se incorporan, la forma correcta de incluirlas sería: `<img src='imagenes/logotipo.png' alt='Logotipo de la empresa'>`.
+**Imágenes:** en este proyecto no hemos utilizado imágenes, por lo que no fue necesario declaralas en el html. 
+Aún así, si en un futuro se incorporan, la forma correcta de incluirlas sería: 
+- Cuando se aporta información de importancia: `<img src='imagenes/logotipo.png' alt='Logotipo de la empresa'>`.
+-Cuando la imagen es únicamente decorativa :`<img src='imagenes/logotipo.png' alt='' aria-hidden='true'>`.
 
 **Grid:** en nuestro caso no hemos utilizado únicamente un solo método de grid, si no, que hemos combinado dos métodos diferentes, según las necesidades del diseño:
 
@@ -53,3 +59,5 @@ Aún así, si en un futuro se incorporan, la forma correcta de incluirlas sería
 **sticky:** en la barra de navegación utilizamos `position:sticky` para mantenerla siempre visible mientras el usuario hace scroll. Mejorando la accesibilidad y experiencia de uso, ya que permite acceder rápidamente al menú sin necesidad de volver a la parte superior de la página. Además solo se fija cuando llega al borde superior, evitando ocupar espacio innecesario antes de tiempo.
 
 **separator:** debido a que el header es sticky, al hacer scroll el título de "Servicios" quedaba oculto bajo la barra de navegación, para corregir este incovenietne, añadimos un separador con una etiqueta `<div id='separator'></div>`, introduciendo un pequeño margen visual que evita que el título quede cubierto, cabe destacar que dicho elemento es invisible. 
+
+**hover:** uso de la pseudoclase `.btn:hover` para cambiar el color de los botones al situar el cursor encima de ellos.
